@@ -1,3 +1,9 @@
+import {
+  RECEIVE_DATE_ELEMENT_ID,
+  SOLUTION_DATE_ELEMENT_ID,
+  SOLUTION_ROW_CLASS_NAME,
+} from "./constants";
+
 interface Solution {
   name: string;
   mailReceivedDate: string;
@@ -20,10 +26,14 @@ export default function Grid({ source }: Props) {
             solutionSentDate,
             isBackgroundColorRed,
           }) => (
-            <tr style={isBackgroundColorRed ? { backgroundColor: "red" } : {}}>
+            <tr
+              key={name}
+              className={SOLUTION_ROW_CLASS_NAME}
+              style={isBackgroundColorRed ? { backgroundColor: "red" } : {}}
+            >
               <td>{name}</td>
-              <td>{mailReceivedDate}</td>
-              <td>{solutionSentDate}</td>
+              <td id={RECEIVE_DATE_ELEMENT_ID}>{mailReceivedDate}</td>
+              <td id={SOLUTION_DATE_ELEMENT_ID}>{solutionSentDate}</td>
             </tr>
           )
         )}

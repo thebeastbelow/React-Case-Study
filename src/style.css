@@ -1,3 +1,17 @@
-h1, p {
+h1,
+p {
   font-family: Lato;
+}
+
+.error {
+  border-color: red;
+}
+
+.red {
+  background-color: maroon !important;
+  color: whitesmoke;
+}
+
+.green {
+  background-color: lime !important;
 }
